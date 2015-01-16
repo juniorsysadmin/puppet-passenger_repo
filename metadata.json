@@ -1,0 +1,48 @@
+{
+  "name": "juniorsysadmin-passenger_repo",
+  "version": "0.1.0",
+  "author": "Ben Spiccia",
+  "summary": "Module for installing the Phusion Passenger OSS/Enterprise APT repository",
+  "license": "Apache-2.0",
+  "source": "git://github.com/juniorsysadmin/puppet-passenger_repo.git",
+  "project_page": "https://github.com/juniorsysadmin/puppet-passenger_repo",
+  "issues_url": "https://github.com/juniorsysadmin/puppet-passenger_repo/issues",
+  "tags": ["passenger"],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "Ubuntu",
+      "operatingsystemrelease": [
+        "10.04",
+        "12.04",
+        "14.04"
+      ]
+    }
+  ],
+  "dependencies": [
+    {
+      "name":"puppetlabs/apt",
+      "version_requirement":">= 1.5.0 < 2.0.0"
+    },
+    {
+      "name":"puppetlabs/stdlib",
+      "version_requirement":">= 2.2.1 < 5.0.0"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">=2.7.20 < 4.0.0"
+    }
+  ]
+}

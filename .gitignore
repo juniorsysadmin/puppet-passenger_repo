@@ -1,8 +1,9 @@
-.bundle
-*.sw*
-.vagrant
-coverage/
-Gemfile.lock
 pkg/
-spec/fixtures
-vendor
+Gemfile.lock
+vendor/
+spec/fixtures/
+.vagrant/
+.bundle/
+coverage/
+.idea/
+*.iml

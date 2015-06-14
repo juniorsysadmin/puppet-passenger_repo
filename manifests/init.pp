@@ -33,15 +33,15 @@ class passenger_repo (
 
     if ($ensure == 'present') {
       apt::source { $repo_name:
-        key        => {
+        key      => {
           'id'     => '16378A33A6EF16762922526E561F9B9CAC40B2F7',
           'server' => 'keyserver.ubuntu.com',
         },
-        location   => $location,
-        pin        => $pin,
-        release    => $::lsbdistcodename,
-        repos      => 'main',
-        require    => [
+        location => $location,
+        pin      => $pin,
+        release  => $::lsbdistcodename,
+        repos    => 'main',
+        require  => [
           Package['apt-transport-https'],
           Package['ca-certificates'],
         ],

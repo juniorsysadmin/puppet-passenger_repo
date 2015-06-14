@@ -1,14 +1,3 @@
-# Class passenger_repo
-#
-# Actions:
-# Sets up the Phusion Passenger OSS or Enterprise APT repository.
-#
-# Reqiures:
-# You should be on Debian Linux variant. (Debian, Ubuntu)
-#
-# Sample Usage:
-# include passenger_repo
-#
 class passenger_repo (
   $ensure                 = $passenger_repo::params::ensure,
   $enterprise_license_key = $passenger_repo::params::enterprise_license_key,
@@ -23,34 +12,39 @@ class passenger_repo (
       fail('The Phusion Enterprise APT download token was not provided.')
     }
 
-    $location = "https://download:${enterprise_token}@www.phusionpassenger.com/enterprise_apt"
-    $repo_name     = $enterprise_repo_name
+    $location  = "https://download:${enterprise_token}@www.phusionpassenger.com/enterprise_apt"
+    $repo_name = $enterprise_repo_name
 
     file { '/etc/passenger-enterprise-license':
-      ensure  => 'present',
+      ensure  => file,
       content => $enterprise_license_key,
       before  => Apt::Source[$repo_name],
     }
   }
 
   else {
-    $location = 'https://oss-binaries.phusionpassenger.com/apt/passenger'
-    $repo_name     = $oss_repo_name
+    $location  = 'https://oss-binaries.phusionpassenger.com/apt/passenger'
+    $repo_name = $oss_repo_name
   }
 
   if $::osfamily == 'Debian' {
+    ensure_packages(['apt-transport-https', 'ca-certificates'])
     include ::apt
 
     if ($ensure == 'present') {
       apt::source { $repo_name:
-        include_src       => false,
-        key               => '561F9B9CAC40B2F7',
-        key_server        => 'keyserver.ubuntu.com',
-        location          => $location,
-        pin               => $pin,
-        release           => $::lsbdistcodename,
-        repos             => 'main',
-        required_packages => 'apt-transport-https ca-certificates',
+        key        => {
+          'id'     => '16378A33A6EF16762922526E561F9B9CAC40B2F7',
+          'server' => 'keyserver.ubuntu.com',
+        },
+        location   => $location,
+        pin        => $pin,
+        release    => $::lsbdistcodename,
+        repos      => 'main',
+        require    => [
+          Package['apt-transport-https'],
+          Package['ca-certificates'],
+        ],
       }
     }
 

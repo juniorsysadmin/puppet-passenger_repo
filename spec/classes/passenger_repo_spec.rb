@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'passenger_repo', :type => :class do
 
- [ '6.0', '7.0', '8.0', '10.04', '12.04', '14.04', ].each do |operatingsystemrelease|
+ [ '6.0', '7.0', '8.0', '12.04', '14.04', ].each do |operatingsystemrelease|
 
     if operatingsystemrelease =~ /^[678]\.(\d+)/
       lsbdistid       = 'Debian'
@@ -18,8 +18,6 @@ describe 'passenger_repo', :type => :class do
       lsbdistcodename = 'wheezy'
     elsif operatingsystemrelease == '8.0'
       lsbdistcodename = 'jessie'
-    elsif operatingsystemrelease == '10.04'
-      lsbdistcodename = 'lucid'
     elsif operatingsystemrelease == '12.04'
       lsbdistcodename = 'precise'
     elsif operatingsystemrelease == '14.04'

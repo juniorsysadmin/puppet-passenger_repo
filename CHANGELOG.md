@@ -1,3 +1,17 @@
+## 2015-06-14 Release 0.2.0
+
+### Backwards-incompatible changes:
+
+none
+
+### Summary:
+
+Changes dependency for puppetlabs-apt from 1.x to 2.x
+
+### Bugs/Maint:
+
+* Uses the expect syntax for RSpec tests
+
 ## 2015-01-21 Release 0.1.1
 
 ### Backwards-incompatible changes:

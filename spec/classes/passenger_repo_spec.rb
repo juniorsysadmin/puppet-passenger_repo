@@ -36,11 +36,11 @@ describe 'passenger_repo', :type => :class do
         }
       end
 
-      it { should compile.with_all_deps }
+      it { is_expected.to compile.with_all_deps }
 
       context 'by default' do
         it 'the Phusion OSS APT repository should be installed' do
-          should contain_apt__source('phusion_passenger').with({
+          is_expected.to contain_apt__source('phusion_passenger').with({
             'location' => 'https://oss-binaries.phusionpassenger.com/apt/passenger',
             'release'  => lsbdistcodename,
           })
@@ -54,13 +54,13 @@ describe 'passenger_repo', :type => :class do
 	}}
       
         it 'the file resource /etc/passenger-enterprise-license should be in the catalog' do
-          should contain_file('/etc/passenger-enterprise-license').with({
+          is_expected.to contain_file('/etc/passenger-enterprise-license').with({
             'content' => 'ABC',
 	  })
         end
 
         it 'the Phusion Enterprise APT repository should be installed' do
-          should contain_apt__source('phusion_passenger_enterprise').with({
+          is_expected.to contain_apt__source('phusion_passenger_enterprise').with({
             'location' => 'https://download:DEF@www.phusionpassenger.com/enterprise_apt',
             'release'  => lsbdistcodename,
           })

@@ -76,6 +76,10 @@ Used for the name of the Enterprise Phusion Passenger repository. Defaults to
 The download token used for downloading from the Phusion Enterprise APT
 repository.
 
+#### `key_server`
+
+The key server used for APT key fetches. Defaults to keyserver.ubuntu.com.
+
 #### `oss_repo_name`
 
 Used for the name of the Phusion Passenger OSS repository. Defaults to

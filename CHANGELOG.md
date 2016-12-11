@@ -5,6 +5,10 @@
 - Puppet 3.8.7 or greater is now required
 - puppetlabs-stdlib 4.6.0 or greater is now required
 
+## Features:
+
+- Add `key_server` parameter to allow custom key server to be used
+
 ## 2015-06-14 Release 0.2.0
 
 ### Backwards-incompatible changes:

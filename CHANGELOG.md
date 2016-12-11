@@ -1,3 +1,10 @@
+## Future
+
+## Backwards-incompatible changes:
+
+- Puppet 3.8.7 or greater is now required
+- puppetlabs-stdlib 4.6.0 or greater is now required
+
 ## 2015-06-14 Release 0.2.0
 
 ### Backwards-incompatible changes:

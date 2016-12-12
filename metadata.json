@@ -1,6 +1,6 @@
 {
   "name": "juniorsysadmin-passenger_repo",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "author": "juniorsysadmin",
   "summary": "Module for installing the Phusion Passenger OSS/Enterprise APT repository",
   "license": "Apache-2.0",

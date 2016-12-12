@@ -76,6 +76,10 @@ Used for the name of the Enterprise Phusion Passenger repository. Defaults to
 The download token used for downloading from the Phusion Enterprise APT
 repository.
 
+#### `key_id`
+
+The key (fingerprint) id to fetch from the key server.
+
 #### `key_server`
 
 The key server used for APT key fetches. Defaults to keyserver.ubuntu.com.

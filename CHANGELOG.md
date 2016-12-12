@@ -1,3 +1,14 @@
+## Future
+
+### Backwards-incompatible changes
+
+- None
+
+### Features
+
+- Adds `key_id` parameter to allow the fingerprint to be changed should the
+  upstream key be changed
+
 ## 2016-12-12 Release 0.3.0
 
 ### Backwards-incompatible changes

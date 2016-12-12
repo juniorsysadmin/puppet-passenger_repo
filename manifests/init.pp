@@ -3,6 +3,7 @@ class passenger_repo (
   $enterprise_license_key = $passenger_repo::params::enterprise_license_key,
   $enterprise_repo_name   = $passenger_repo::params::enterprise_repo_name,
   $enterprise_token       = $passenger_repo::params::enterprise_token,
+  $key_id                 = $passenger_repo::params::key_id,
   $key_server             = $passenger_repo::params::key_server,
   $oss_repo_name          = $passenger_repo::params::oss_repo_name,
   $pin                    = $passenger_repo::params::pin,
@@ -35,7 +36,7 @@ class passenger_repo (
     if ($ensure == 'present') {
       apt::source { $repo_name:
         key      => {
-          'id'     => '16378A33A6EF16762922526E561F9B9CAC40B2F7',
+          'id'     => $key_id,
           'server' => $key_server,
         },
         location => $location,
